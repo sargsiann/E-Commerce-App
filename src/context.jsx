@@ -18,7 +18,7 @@ export const AppProvider = ({ children }) => {
 	}, []);
 
 	return (
-		<AppContext.Provider value={{ state, dispatch}}>
+		<AppContext.Provider value={{ state, reducer}}>
 			{children}
 		</AppContext.Provider>
 	);
