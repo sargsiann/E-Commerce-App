@@ -1,16 +1,18 @@
 import React, { createContext, useReducer,useEffect } from 'react';
 
 import './App.css'
-import	getProducts from './api'
-import  dispatch  from './reducer.jsx'
+import { AppProvider } from './context.jsx'
+import ProductList from './components/ProductList.jsx';
 
 function App() {
 
   return (
     <>
 		<div className='App'>
-			<h1>E-commerce-app</h1>
-			
+			<h1>Product List</h1>
+			<AppProvider>
+				<ProductList />
+			</AppProvider>			
 		</div>
     </>
   )

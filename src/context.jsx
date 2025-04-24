@@ -1,19 +1,19 @@
-import { createContext,useReducer } from "react";
+import { createContext,useReducer,useEffect } from "react";
 
 import	dispatch from './reducer.jsx'
-import getProducts from './api.jsx'
+import getProducts from './api.js'
 
 export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-	const [state, dispatch] = useReducer(dispatch, []);
+	const [state, reducer] = useReducer(dispatch, []);
 
 	useEffect(() => {
 		let p = getProducts();
 		p.then((data) => {
-			dispatch({ type: 'SET_PRODUCTS', payload: data });
+			reducer({ type: 'SET_PRODUCTS', payload: data });
 		}).catch((error) => {
-			dispatch({ type: 'SET_ERROR', payload: error });
+			reducer({ type: 'SET_ERROR', payload: error });
 		})
 	}, []);
 
