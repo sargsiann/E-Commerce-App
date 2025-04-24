@@ -5,18 +5,13 @@ import	getProducts from './api'
 import  dispatch  from './reducer.jsx'
 
 function App() {
-  const [products, setProducts] = useReducer(dispatch)
-
-  useEffect(() => {
-	let f = getProducts().then((data) => {
-		console.log(data)
-	});
-
-  }, [])
 
   return (
     <>
-     
+		<div className='App'>
+			<h1>E-commerce-app</h1>
+			
+		</div>
     </>
   )
 }
