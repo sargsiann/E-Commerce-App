@@ -5,10 +5,9 @@ import "../App.css"
 function	ProductList() {
 	let { state, reducer } = useContext(AppContext);
 
-	console.log(state);
 	return (
 		<div className="product-list">
-			{state.map((product) => (
+			{state && state.map((product) => (
 				<div className="product" key={product.id}>
 					<img src={product.image} alt={product.name} />
 					<h2>{product.title}</h2>

@@ -14,6 +14,7 @@ function	dispatch(state, action) {
 					localStorage.setItem('cart', JSON.stringify(storage));
 					return { ...product, inCart: true }
 				}
+				return product;
 			}));
 		case 'REMOVE':
 			return (state.map((product) => {
@@ -22,6 +23,7 @@ function	dispatch(state, action) {
 					localStorage.setItem('cart', JSON.stringify(storage));
 					return { ...product, inCart: false }
 				}
+				return product;
 			}));
 		default:
 			return state
