@@ -16,7 +16,7 @@ function App() {
 			<AppProvider>
 				{!cart && <ProductList />}
 				{cart && <Cart />}
-			</AppProvider>			
+			</AppProvider>	
 		</div>
     </>
   )

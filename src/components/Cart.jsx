@@ -18,11 +18,13 @@ function	Cart() {
 							<img src={product.image} alt={product.name} />
 							<h2>{product.title}</h2>
 							<p>${product.price}</p>
-							<button onClick={() => reducer('REMOVE',product)}>Remove from Cart</button>
+							<button onClick={() => {
+								reducer({type : 'REMOVE',payload : product});
+							}}>Remove from Cart</button>
 						</div>
 					))}
 					<div className="cart-total">
-						<h2>Total: ${inCart.reduce((acc, product) => acc + product.price, 0).toFixed(2)}</h2>
+						<h2>Total: ${inCart.reduce((acc, product) => acc + product.price, 0)}</h2>
 					</div>
 				</div>
 			)}
